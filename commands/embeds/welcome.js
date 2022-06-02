@@ -10,34 +10,51 @@ module.exports = {
      * @param {String[]} args
      */
     run: async (client, message, args) => {
-            const embed = new discord.MessageEmbed()
+            const welcome = new discord.MessageEmbed()
             .setColor('GREEN')
             .setFooter(`Called By: ${message.author.tag}`)
             .setTimestamp()
             .setTitle("Welcome!")
-            .setDescription(`We're the official student-run Computer Science Society at Hull, set up with the aim of providing engaging events for students with an interest in Computer Science. This basically means our role is to make life outside of your course as fun and interesting as possible, organising both social and technical events for you.`)
-            .setThumbnail('https://i.imgur.com/ww6wKwJ.png')
-            .addField('Exec Members', `President - <@261607869068214272>.\r\nSecretary - <@265925073926488064>.\r\nTreasurer - <@354324259629170700>.\r\nSocial Secretary - NA.\r\n Publicity Officer - <@328928794364870656>.\r\nWebmaster - <@449573875743981569>.\r\n\r\n\r\n`)
-            .addField('Our Links', `https://hullcss.org/links`)
-            .addField('Gain Access', `To gain access to the server, you will need to have a read of the code of conduct, found here: https://github.com/hullcss/conduct/ and react to the check mark below.\r\n \r\n **All Members, including Community are required to read this policy to access the server.**`)
-            .addField('Confirmation', 'By reacting with the check mark, you confirm that you have read the #hullcss Code of Conduct')
+            .setDescription(`We are the Robotics Society, a society where you can gain skills in building actual robot, or get help with your assignments or exams, and we know that people like us don’t do much but we also run social night where we go out to do stuff.`)
+            .addField('Exec Members', `President - <@720360699053998242>.\r\nVice President - <@219827174180388864>.\r\nTreasurer - <@619168812083838979>.\r\nSecretary - <@660971490111651840>\r\nMedia Officer - <@626884131812540416>.\r\n Health and Safety Officer - <@311175662817902594>.\r\Project Manager - <@256765136365289482>.\r\n\r\n\r\n`)
+            .addField('Rules', ' https://github.com/UniOfHullRoboticsSociety/conduct')
+            .addField('Our Links', ` https://www.linktr.ee/HU_RS`)
+            .addField('Roles','Please message <@219827174180388864> to recieve the <@&744923016751743038> role.\r\nSelect your year below.')
 
-            const row = new discord.MessageActionRow()
+            const years = new discord.MessageActionRow()
 			.addComponents(
                 new discord.MessageButton()
-                .setURL('https://github.com/hullcss/conduct/')
-                .setEmoji('')
-                .setLabel('Code of Conduct')
-                .setStyle('LINK')
+                .setCustomId('Foundation')
+                .setLabel('Foundation')
+                .setStyle('PRIMARY')
             )
             .addComponents(
-				new discord.MessageButton()
-                .setCustomId('codeOfConduct')
-                .setEmoji('✅')
-                .setLabel(' I have read the code of conduct!')
-                .setStyle('SUCCESS')
+                new discord.MessageButton()
+                .setCustomId('Freshers')
+                .setLabel('Freshers')
+                .setStyle('PRIMARY')
+            )
+            .addComponents(
+                new discord.MessageButton()
+                .setCustomId('SecondYear')
+                .setLabel('Second Year')
+                .setStyle('PRIMARY')
+            )
+            .addComponents(
+                new discord.MessageButton()
+                .setCustomId('Bachelors')
+                .setLabel('Bachelors')
+                .setStyle('PRIMARY')
+            )
+            .addComponents(
+                new discord.MessageButton()
+                .setCustomId('Masters')
+                .setLabel('Masters')
+                .setStyle('PRIMARY')
             )
 
-        message.channel.send({ embeds: [embed], components: [row] })
+        message.channel.send({ embeds: [welcome], components: [years] })
+
+
     },
 };

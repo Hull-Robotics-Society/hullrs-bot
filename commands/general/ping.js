@@ -22,8 +22,7 @@ module.exports = {
         .setTimestamp()
         .setTitle("Pong!")
         .setDescription(`${client.ws.ping} ping to host`)
-        .addField('Uptime', ` ${days}days ${hours}hrs ${minutes}min ${seconds}sec`, true)	    
-
+        .addField('Uptime', ` ${days}days ${hours}hrs ${minutes}min ${seconds}sec`, true)
         message.channel.send({ embeds: [embed] })
 
 

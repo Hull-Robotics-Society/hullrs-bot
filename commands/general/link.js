@@ -14,9 +14,10 @@ module.exports = {
         .setTitle("Links!")
         .setColor('GREEN')
         .setFooter(`Called By: ${message.author.tag}`)
-        .addField('Find us here:','https://hullcss.org/links')
+        .addField('Find us here:','https://www.linktr.ee/HU_RS')
         message.channel.send({ embeds: [embed] });
 
 
     },
 };
+

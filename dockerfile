@@ -1,17 +1,15 @@
 FROM node:16.15.0
 
 # Create the directory!
-RUN mkdir -p /usr/hullcss
-WORKDIR /usr/hullcss
+RUN mkdir -p /usr/hursbot
+WORKDIR /usr/hursbot
 
 # Copy and Install our bot
-COPY package.json /usr/hullcss
+COPY package.json /usr/hursbot
 RUN npm install
 
 # Our precious bot
-COPY . /usr/hullcss
+COPY . /usr/hursbot
 
 # Start me!
-EXPOSE 5002
-VOLUME ["latest"]
 CMD ["node", "index.js"]
