@@ -3,14 +3,14 @@ const client = require("../index");
 
 
 client.on('ready', () => {
-    console.log('HullCSS is online')
-    client.user.setActivity(`!help | hullcss.org`, {type:"WATCHING"})
+    console.log('HURS is online')
+    client.user.setActivity(`$help`, {type:"WATCHING"})
 
 
-    const guild = client.guilds.cache.get('744586833135927366');
     setInterval(() =>{
-        const memberCount = guild.members.cache.filter(m => !m.user.bot).size;
-        const channel = guild.channels.cache.get('906167542249308160');
-        channel.setName(`Discord Members: ${memberCount.toLocaleString()}`);
+        const memberCount = client.guilds.cache.get('744914400065880114').memberCount
+        const channel = client.channels.cache.get('937366584735981569');
+        channel.setName(`Members: ${memberCount.toLocaleString()}`);
     }, 600000);
+
 })
