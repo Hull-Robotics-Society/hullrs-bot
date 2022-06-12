@@ -28,7 +28,7 @@ DISCORD_TOKEN = <Discord Token>
 PREFIX = !
 ```
 - Run `npm i`
-- Run node .
+- Run `node .`
 
 ---
 ## Contributions
