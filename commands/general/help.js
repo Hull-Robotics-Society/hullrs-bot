@@ -15,7 +15,7 @@ module.exports = {
             const embed = new discord.MessageEmbed()
             .setTitle("Hull Robotics Society Help")
             .setDescription("You can use `$help <category>` to get additional commands within a specfic category")
-            .setColor('GREEN')
+            .setColor('#31429a')
     
             .addField('❓`$help`','This Command', true)
             .addField('🛠️`$help admin`','Displays Admin Commands!', true)

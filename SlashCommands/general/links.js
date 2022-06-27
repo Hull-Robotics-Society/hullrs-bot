@@ -13,7 +13,7 @@ module.exports = {
     run: async (client, interaction, args) => {
         const embed = new MessageEmbed()
         .setTitle("Links!")
-        .setColor('GREEN')
+        .setColor('#31429a')
         .setFooter(`Called By: ${interaction.user.tag}`)
         .addField('Find us here:','https://hullcss.org/links')
         interaction.followUp({ embeds: [embed]});

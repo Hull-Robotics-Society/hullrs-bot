@@ -17,7 +17,7 @@ module.exports = {
   
 
         const embed = new MessageEmbed()
-        .setColor('GREEN')
+        .setColor('#31429a')
         .setFooter(`Called By: ${message.author.tag}`)
         .setTimestamp()
         .setTitle("Pong!")

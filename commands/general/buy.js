@@ -12,7 +12,7 @@ module.exports = {
     run: async (client, message, args) => {
         const embed = new discord.MessageEmbed()
         .setTitle("Thanks for considering to become a paid member!")
-        .setColor('GREEN')
+        .setColor('#31429a')
         .setFooter(`Called By: ${message.author.tag}`)
         .addField('You can purchase from below!','https://hulluniunion.com/shop?aid=335')
         message.channel.send({ embeds: [embed] });

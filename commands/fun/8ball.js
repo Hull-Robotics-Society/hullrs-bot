@@ -22,7 +22,7 @@ module.exports = {
             if (!messageArgs[1]) return message.reply('Please specify a topic.');
 
             const embed = new MessageEmbed()
-            .setColor('GREEN')
+            .setColor('#31429a')
             .setFooter(`Called By: ${message.author.tag}`)
             .setTimestamp()
             .setTitle("8Ball")

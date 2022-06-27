@@ -12,7 +12,7 @@ module.exports = {
 
     run: async (client, message, args) => {
         const pronounsEmbed = new discord.MessageEmbed()
-        .setColor('GREEN')
+        .setColor('#31429a')
         .setFooter(`Called By: ${message.author.tag}`)
         .setTimestamp()
         .setTitle("Pronoun Roles!")
