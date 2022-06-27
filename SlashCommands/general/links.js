@@ -2,7 +2,7 @@ const { Client, CommandInteraction, MessageEmbed } = require("discord.js");
 
 module.exports = {
     name: "links",
-    description: "returns links of Hullcss",
+    description: "returns links of HURS",
     type: 'CHAT_INPUT',
     /**
      *
