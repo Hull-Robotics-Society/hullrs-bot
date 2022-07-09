@@ -52,6 +52,8 @@ module.exports = {
                 .setLabel('Masters')
                 .setStyle('PRIMARY')
             )
+
+            const yearsCont = new discord.MessageActionRow()
             .addComponents(
                 new discord.MessageButton()
                 .setCustomId('Graduate')
@@ -59,7 +61,7 @@ module.exports = {
                 .setStyle('PRIMARY')
             )
 
-        message.channel.send({ embeds: [welcome], components: [years] })
+        message.channel.send({ embeds: [welcome], components: [years, yearsCont] })
 
 
     },
