@@ -52,6 +52,12 @@ module.exports = {
                 .setLabel('Masters')
                 .setStyle('PRIMARY')
             )
+            .addComponents(
+                new discord.MessageButton()
+                .setCustomId('Graduate')
+                .setLabel('Graduate')
+                .setStyle('PRIMARY')
+            )
 
         message.channel.send({ embeds: [welcome], components: [years] })
 
