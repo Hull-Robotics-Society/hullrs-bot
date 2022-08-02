@@ -15,7 +15,7 @@ docker run -d \
 -e DISCORD_TOKEN='INSERT DISCORD TOKEN' \
 -e PREFIX='$' \
 --restart unless-stopped \
-kieranr27/hurs:latest
+kieranr27/hurs:main
 ```
 
 Using a tool like [Ouroboros](https://github.com/pyouroboros/ouroboros), you can automatically update containers without the need for restarts.
