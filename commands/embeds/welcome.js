@@ -56,6 +56,13 @@ module.exports = {
             const yearsCont = new discord.MessageActionRow()
             .addComponents(
                 new discord.MessageButton()
+                .setCustomId('PhD')
+                .setLabel('PhD')
+                .setStyle('PRIMARY')
+            )
+
+            .addComponents(
+                new discord.MessageButton()
                 .setCustomId('Graduate')
                 .setLabel('Graduate')
                 .setStyle('PRIMARY')

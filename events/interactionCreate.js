@@ -38,6 +38,7 @@ client.on("interactionCreate", async (interaction) => {
             interaction.member.roles.remove("912414905032929302") // RM Bachelors
             interaction.member.roles.remove("937383563798663258") // RM Masters
             interaction.member.roles.remove("995270561712324659") // RM Graduate
+            interaction.member.roles.remove("1003951789634244679") // RM PhD
             await interaction.reply({ content: 'Roles have been updated', ephemeral: true});
         }
         if(interaction.customId == "Freshers"){
@@ -47,6 +48,7 @@ client.on("interactionCreate", async (interaction) => {
             interaction.member.roles.remove("912414905032929302") // RM Bachelors
             interaction.member.roles.remove("937383563798663258") // RM Masters
             interaction.member.roles.remove("995270561712324659") // RM Graduate
+            interaction.member.roles.remove("1003951789634244679") // RM PhD
             await interaction.reply({ content: 'Roles have been updated', ephemeral: true});
         }
         if(interaction.customId == "SecondYear"){
@@ -56,6 +58,7 @@ client.on("interactionCreate", async (interaction) => {
             interaction.member.roles.remove("912414905032929302") // RM Bachelors
             interaction.member.roles.remove("937383563798663258") // RM Masters
             interaction.member.roles.remove("995270561712324659") // RM Graduate
+            interaction.member.roles.remove("1003951789634244679") // RM PhD
             await interaction.reply({ content: 'Roles have been updated', ephemeral: true});
         }
         if(interaction.customId == "Bachelors"){
@@ -65,6 +68,7 @@ client.on("interactionCreate", async (interaction) => {
             interaction.member.roles.remove("912414716666728508") // RM Second Year
             interaction.member.roles.remove("937383563798663258") // RM Masters
             interaction.member.roles.remove("995270561712324659") // RM Graduate
+            interaction.member.roles.remove("1003951789634244679") // RM PhD
             await interaction.reply({ content: 'Roles have been updated', ephemeral: true});
         }
         if(interaction.customId == "Masters"){
@@ -74,6 +78,17 @@ client.on("interactionCreate", async (interaction) => {
             interaction.member.roles.remove("912414716666728508") // RM Second Year
             interaction.member.roles.remove("912414905032929302") // RM Bachelors
             interaction.member.roles.remove("995270561712324659") // RM Graduate
+            interaction.member.roles.remove("1003951789634244679") // RM PhD
+            await interaction.reply({ content: 'Roles have been updated', ephemeral: true});
+        }
+        if(interaction.customId == "PhD"){
+            interaction.member.roles.add("1003951789634244679") // Add PhD
+            interaction.member.roles.remove("937383484211724319") // RM Foundation
+            interaction.member.roles.remove("912413297771442216") // RM Freshers
+            interaction.member.roles.remove("912414716666728508") // RM Second Year
+            interaction.member.roles.remove("912414905032929302") // RM Bachelors
+            interaction.member.roles.remove("937383563798663258") // RM Masters
+            interaction.member.roles.remove("995270561712324659") // RM PhD
             await interaction.reply({ content: 'Roles have been updated', ephemeral: true});
         }
         if(interaction.customId == "Graduate"){
@@ -83,7 +98,7 @@ client.on("interactionCreate", async (interaction) => {
             interaction.member.roles.remove("912414716666728508") // RM Second Year
             interaction.member.roles.remove("912414905032929302") // RM Bachelors
             interaction.member.roles.remove("937383563798663258") // RM Masters
-
+            interaction.member.roles.remove("1003951789634244679") // RM PhD
             await interaction.reply({ content: 'Roles have been updated', ephemeral: true});
         }
 
