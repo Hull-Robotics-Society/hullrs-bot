@@ -1,5 +1,5 @@
 {
-    "name": "hullcss",
+    "name": "hullrs",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
@@ -11,8 +11,8 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "discord.js": "^13.7.0",
-        "dotenv": "^16.0.1",
+        "discord.js": "^13.10.2",
+        "dotenv": "^16.0.2",
         "glob": "^7.2.3"
     }
 }
