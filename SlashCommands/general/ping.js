@@ -17,7 +17,7 @@ module.exports = {
         let seconds = Math.floor(client.uptime / 1000) % 60;
 
         const embed = new MessageEmbed()
-        .setColor('31429a')
+        .setColor('#31429a')
         .setFooter({ text: `Called By: ${interaction.user.tag}`})
         .setTimestamp()
         .setTitle("Pong!")
