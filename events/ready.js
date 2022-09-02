@@ -4,7 +4,7 @@ const client = require("../index");
 
 client.on('ready', () => {
     console.log('HURS is online')
-    client.user.setActivity(`$help`, {type:"WATCHING"})
+    client.user.setActivity(`Slash Commands`, {type:"WATCHING"})
 
 
     setInterval(() =>{
