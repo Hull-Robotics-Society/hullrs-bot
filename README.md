@@ -33,7 +33,7 @@ docker run -d \
 --name=hullrs \
 -p 6004:6003 \
 -e DISCORD_TOKEN='INSERT DISCORD TOKEN' \
--e PREFIX='!' \
+-e PREFIX='$' \
 --restart unless-stopped \
 kieranr27/hurs:main
 ```
