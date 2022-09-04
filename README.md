@@ -2,7 +2,7 @@
 
 <img src="https://cdn.discordapp.com/avatars/981931735400988702/cc5e6e40c52bb7de459156fd162c9d7a.webp" width="150" height="150">
 
-## HullCSS Discord Bot
+## HullRS Discord Bot
 
 This bot is a multipurpose discord bot for The Hull Robotics Society Discord server. 
 
