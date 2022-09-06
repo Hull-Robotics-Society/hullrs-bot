@@ -166,28 +166,33 @@ client.on("interactionCreate", async (interaction) => {
         if(interaction.customId == "projectSuggest")
         {
             const modal = new discord.Modal()
-            .setCustomId('modal-paidmember')
-            .setTitle('Paid Member Discord Access')
-        const projectname = new discord.TextInputComponent()                        
-            .setLabel("Project Name")
-            .setStyle("SHORT")
-            .setCustomId("projectname")
-            .setPlaceholder(`A big robot`)
-        const projectdescription = new discord.TextInputComponent()                        
-            .setLabel("Project Description")
-            .setStyle("PARAGRAPH")
-            .setCustomId("projectdescription")
-            .setPlaceholder(`Its a super cool project`)
-        const projectreason = new discord.TextInputComponent()                        
-            .setLabel("How would students benefit from this project?")
-            .setStyle("PARAGRAPH")
-            .setCustomId("projectreason")
-            .setPlaceholder(`Its a super cool project`)
-        const firstActionRow = new discord.MessageActionRow().addComponents(projectname);
-        const secondActionRow = new discord.MessageActionRow().addComponents(projectdescription);   
-        const thirdActionRow = new discord.MessageActionRow().addComponents(projectreason);   
-        modal.addComponents(firstActionRow, secondActionRow, thirdActionRow);
-        await interaction.showModal(modal);   
+                .setCustomId('modal-projectrequest')
+                .setTitle('Poject Request')
+            const projectname = new discord.TextInputComponent()                        
+                .setLabel("Project Name")
+                .setStyle("SHORT")
+                .setCustomId("projectname")
+                .setPlaceholder(`A big robot`)
+            const projectdescription = new discord.TextInputComponent()                        
+                .setLabel("Project Description")
+                .setStyle("PARAGRAPH")
+                .setCustomId("projectdescription")
+                .setPlaceholder(`Its a super cool project`)
+            const projectreason = new discord.TextInputComponent()                        
+                .setLabel("How would students benefit from this project?")
+                .setStyle("PARAGRAPH")
+                .setCustomId("projectreason")
+                .setPlaceholder(`Its a super cool project`)
+            const projectotherinfo = new discord.TextInputComponent()                        
+                .setLabel("Is there any other information you would like to share")
+                .setStyle("PARAGRAPH")
+                .setCustomId("projectotherinfo")
+            const firstActionRow = new discord.MessageActionRow().addComponents(projectname);
+            const secondActionRow = new discord.MessageActionRow().addComponents(projectdescription);   
+            const thirdActionRow = new discord.MessageActionRow().addComponents(projectreason);   
+            const fourthActionRow = new discord.MessageActionRow().addComponents(projectotherinfo);   
+            modal.addComponents(firstActionRow, secondActionRow, thirdActionRow, fourthActionRow);
+            await interaction.showModal(modal);   
         }
     }
 
@@ -197,4 +202,23 @@ client.on("interactionCreate", async (interaction) => {
 
     }
 
+
+    if(interaction.isModalSubmit())
+    {
+        if(interaction.customId === 'modal-projectrequest'){
+            const botOutput = client.channels.cache.get('992766965313699870')
+    
+            const embed = new discord.MessageEmbed()
+                .setTitle("New Project Request")
+                .setColor('GREEN')
+                .addField('Project ', `${ interaction.fields.getTextInputValue("projectname")}`)
+                .addField('Project Description',`${ interaction.fields.getTextInputValue("projectdescription")}`)
+                .addField('Project Reasoning',`${ interaction.fields.getTextInputValue("projectreason")}`)
+                .addField('Any Other Info',`${ interaction.fields.getTextInputValue("otherinfo")}`)
+                .setFooter({ text: `Requested by ${interaction.user.tag}`})
+            botOutput.send({embeds: [embed] });
+            await interaction.deferReply({ ephemeral: true })
+            interaction.followUp({ content: 'Your request has been sent to execs!', ephemeral: true })
+        }  
+    }
 });

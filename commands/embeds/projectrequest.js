@@ -18,7 +18,6 @@ module.exports = {
         .setFooter(`Called By: ${message.author.tag}`)
         .setTimestamp()
 
-
         const row = new MessageActionRow()
         .addComponents(
             new MessageButton()
