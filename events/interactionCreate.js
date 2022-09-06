@@ -194,6 +194,41 @@ client.on("interactionCreate", async (interaction) => {
             modal.addComponents(firstActionRow, secondActionRow, thirdActionRow, fourthActionRow);
             await interaction.showModal(modal);   
         }
+
+        if(interaction.customId == "paidModal")
+        {
+            if(interaction.member.roles.cache.has(`744923016751743038`))
+            {
+                await interaction.deferReply({ ephemeral: true })
+                interaction.followUp({ content: 'You already have the paid member role.', ephemeral: true })
+
+            } 
+            else{
+                const modal = new discord.Modal()
+                    .setCustomId('modal-paidmember')
+                    .setTitle('Paid Member Discord Access')
+                const studentname = new discord.TextInputComponent()                        
+                    .setLabel("Student Name")
+                    .setStyle("SHORT")
+                    .setCustomId("studentname")
+                    .setPlaceholder(`Joe Bloggs`)
+                const studentnumber = new discord.TextInputComponent()                        
+                    .setLabel("Student Number")
+                    .setStyle("SHORT")
+                    .setCustomId("studentnumber")
+                    .setPlaceholder(`202001234`)
+                const firstActionRow = new discord.MessageActionRow().addComponents(studentname);
+                const secondActionRow = new discord.MessageActionRow().addComponents(studentnumber);   
+                modal.addComponents(firstActionRow, secondActionRow);
+                await interaction.showModal(modal);   
+                }
+        }
+
+        if(interaction.customId == "deletemessage")
+        {
+            await interaction.message.delete();
+            await interaction.reply({ content: 'Message has been deleted', ephemeral: true});
+        }
     }
 
 
@@ -207,6 +242,7 @@ client.on("interactionCreate", async (interaction) => {
     {
         if(interaction.customId === 'modal-projectrequest')
         {
+            const botOutput = client.channels.cache.get('1016687156728709130')
             const embed = new discord.MessageEmbed()
                 .setTitle("New Project Request")
                 .setColor('PURPLE')
