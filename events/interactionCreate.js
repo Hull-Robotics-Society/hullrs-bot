@@ -207,10 +207,9 @@ client.on("interactionCreate", async (interaction) => {
     {
         if(interaction.customId === 'modal-projectrequest')
         {
-            const botOutput = client.channels.cache.get('1016687156728709130')
             const embed = new discord.MessageEmbed()
                 .setTitle("New Project Request")
-                .setColor('GREEN')
+                .setColor('PURPLE')
                 .addField('Project ', `${ interaction.fields.getTextInputValue("projectname")}`)
                 .addField('Project Description',`${ interaction.fields.getTextInputValue("projectdescription")}`)
                 .addField('Project Reasoning',`${ interaction.fields.getTextInputValue("projectreason")}`)
@@ -221,7 +220,28 @@ client.on("interactionCreate", async (interaction) => {
             interaction.followUp({ content: 'Your request has been sent to execs!', ephemeral: true })
         }
 
-        
+        if(interaction.customId === 'modal-paidmember'){
+            const botOutput = client.channels.cache.get('1016687156728709130')
+            const embed = new discord.MessageEmbed()
+                .setTitle("New Paid Member Request")
+                .setColor('YELLOW')
+                .addField('Discord Tag', `${ interaction.user} <- Click to add role.`)
+                .addField('Discord Discriminator', `${interaction.user.tag}`)
+                .addField('Student Name', `${ interaction.fields.getTextInputValue("studentname")}`)
+                .addField('Student Number',`${ interaction.fields.getTextInputValue("studentnumber")}`)
+                .setDescription('https://hulluniunion.com/')
+            const row = new discord.MessageActionRow()
+            .addComponents(
+                new discord.MessageButton()
+                    .setCustomId('deletemessage')
+                    .setEmoji('')
+                    .setLabel('Delete Message')
+                    .setStyle('DANGER')
+            )
+            botOutput.send({embeds: [embed], components: [row] });
+            await interaction.deferReply({ ephemeral: true })
+            interaction.followUp({ content: 'Your request has been sent to execs!', ephemeral: true })
+        }  
 
 
     }

@@ -26,7 +26,7 @@ module.exports = {
         const row = new MessageActionRow()
             .addComponents(
                 new MessageButton()
-                .setURL('https://hulluniunion.com/shop?aid=355')
+                .setURL('https://hulluniunion.com/shop?aid=335')
                 .setEmoji('')
                 .setLabel('Pay for a membership!')
                 .setStyle('LINK')
