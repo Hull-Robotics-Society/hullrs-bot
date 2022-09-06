@@ -184,7 +184,7 @@ client.on("interactionCreate", async (interaction) => {
                 .setCustomId("projectreason")
                 .setPlaceholder(`Its a super cool project`)
             const projectotherinfo = new discord.TextInputComponent()                        
-                .setLabel("Is there any other information you would like to share")
+                .setLabel("Other information you would like to share")
                 .setStyle("PARAGRAPH")
                 .setCustomId("projectotherinfo")
             const firstActionRow = new discord.MessageActionRow().addComponents(projectname);
@@ -205,20 +205,24 @@ client.on("interactionCreate", async (interaction) => {
 
     if(interaction.isModalSubmit())
     {
-        if(interaction.customId === 'modal-projectrequest'){
+        if(interaction.customId === 'modal-projectrequest')
+        {
             const botOutput = client.channels.cache.get('1016687156728709130')
-    
             const embed = new discord.MessageEmbed()
                 .setTitle("New Project Request")
                 .setColor('GREEN')
                 .addField('Project ', `${ interaction.fields.getTextInputValue("projectname")}`)
                 .addField('Project Description',`${ interaction.fields.getTextInputValue("projectdescription")}`)
                 .addField('Project Reasoning',`${ interaction.fields.getTextInputValue("projectreason")}`)
-                .addField('Any Other Info',`${ interaction.fields.getTextInputValue("otherinfo")}`)
+                .addField('Any Other Info',`${ interaction.fields.getTextInputValue("projectotherinfo")}`)
                 .setFooter({ text: `Requested by ${interaction.user.tag}`})
             botOutput.send({embeds: [embed] });
             await interaction.deferReply({ ephemeral: true })
             interaction.followUp({ content: 'Your request has been sent to execs!', ephemeral: true })
-        }  
+        }
+
+        
+
+
     }
 });
