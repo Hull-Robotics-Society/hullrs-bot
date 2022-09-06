@@ -1,5 +1,6 @@
 
 const client = require("../index");
+const discord = require('discord.js')
 
 client.on("interactionCreate", async (interaction) => {
     // Slash Command Handling
@@ -160,6 +161,33 @@ client.on("interactionCreate", async (interaction) => {
                 interaction.member.roles.cache.add("937381134269022270")
             }
             await interaction.reply({ content: 'Roles have been updated', ephemeral: true});
+        }
+
+        if(interaction.customId == "projectSuggest")
+        {
+            const modal = new discord.Modal()
+            .setCustomId('modal-paidmember')
+            .setTitle('Paid Member Discord Access')
+        const projectname = new discord.TextInputComponent()                        
+            .setLabel("Project Name")
+            .setStyle("SHORT")
+            .setCustomId("projectname")
+            .setPlaceholder(`A big robot`)
+        const projectdescription = new discord.TextInputComponent()                        
+            .setLabel("Project Description")
+            .setStyle("PARAGRAPH")
+            .setCustomId("projectdescription")
+            .setPlaceholder(`Its a super cool project`)
+        const projectreason = new discord.TextInputComponent()                        
+            .setLabel("How would students benefit from this project?")
+            .setStyle("PARAGRAPH")
+            .setCustomId("projectreason")
+            .setPlaceholder(`Its a super cool project`)
+        const firstActionRow = new discord.MessageActionRow().addComponents(projectname);
+        const secondActionRow = new discord.MessageActionRow().addComponents(projectdescription);   
+        const thirdActionRow = new discord.MessageActionRow().addComponents(projectreason);   
+        modal.addComponents(firstActionRow, secondActionRow, thirdActionRow);
+        await interaction.showModal(modal);   
         }
     }
 
