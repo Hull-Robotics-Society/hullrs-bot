@@ -206,7 +206,7 @@ client.on("interactionCreate", async (interaction) => {
     if(interaction.isModalSubmit())
     {
         if(interaction.customId === 'modal-projectrequest'){
-            const botOutput = client.channels.cache.get('992766965313699870')
+            const botOutput = client.channels.cache.get('1016687156728709130')
     
             const embed = new discord.MessageEmbed()
                 .setTitle("New Project Request")
