@@ -31,7 +31,7 @@ Due to the [Publish.yml](.github/workflows/publish.yml) workflow, the newest bui
 ```docker
 docker run -d \
 --name=hullrs \
--p 6004:6003 \
+-p 6003:6003 \
 -e DISCORD_TOKEN='INSERT DISCORD TOKEN' \
 -e PREFIX='$' \
 --restart unless-stopped \
