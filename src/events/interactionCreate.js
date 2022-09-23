@@ -233,21 +233,21 @@ client.on('interactionCreate', async (interaction) => {
 				const modal = new discord.Modal()
 					.setCustomId('modal-paidmember')
 					.setTitle('Paid Member Discord Access');
-				const studentname = new discord.TextInputComponent()
+				const studentName = new discord.TextInputComponent()
 					.setLabel('Student Name')
 					.setStyle('SHORT')
-					.setCustomId('studentname')
+					.setCustomId('studentName')
 					.setPlaceholder(`Joe Blogs`);
-				const studentnumber = new discord.TextInputComponent()
+				const studentNumber = new discord.TextInputComponent()
 					.setLabel('Student Number')
 					.setStyle('SHORT')
-					.setCustomId('studentnumber')
+					.setCustomId('studentNumber')
 					.setPlaceholder(`202001234`);
 				const firstActionRow = new discord.MessageActionRow().addComponents(
-					studentname
+					studentName
 				);
 				const secondActionRow = new discord.MessageActionRow().addComponents(
-					studentnumber
+					studentNumber
 				);
 				modal.addComponents(firstActionRow, secondActionRow);
 				await interaction.showModal(modal);
@@ -303,11 +303,11 @@ client.on('interactionCreate', async (interaction) => {
 				.addField('Discord Discriminator', `${interaction.user.tag}`)
 				.addField(
 					'Student Name',
-					`${interaction.fields.getTextInputValue('studentname')}`
+					`${interaction.fields.getTextInputValue('studentName')}`
 				)
 				.addField(
 					'Student Number',
-					`${interaction.fields.getTextInputValue('studentnumber')}`
+					`${interaction.fields.getTextInputValue('studentNumber')}`
 				)
 				.setDescription('https://hulluniunion.com/');
 			const row = new discord.MessageActionRow().addComponents(
