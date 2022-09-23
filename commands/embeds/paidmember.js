@@ -20,7 +20,7 @@ module.exports = {
             .setTitle("Paid Member!")
             .setDescription(`Press the button below to get access to the paid member role.`)
             .addField('Benefits?', 'Come to every event\r\n Vote in AGMs and EGMs\r\n Access to the rest of the server\r\n\r\nAnd support the society you are apart of!')
-            .addField('Pay for a membership', 'Press the grey button below!')
+            .addField('Pay for a membership', 'Press the grey button below!\r\nThis will send a message to the exec team with your details, once verified you are a paid member, they will give you the role.')
 
 
         const row = new MessageActionRow()
