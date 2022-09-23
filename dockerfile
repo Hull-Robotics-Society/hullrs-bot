@@ -1,7 +1,7 @@
-FROM node:16.15.0
-RUN mkdir -p /usr/hurs
-WORKDIR /usr/hurs
-COPY package.json /usr/hurs
+FROM node:16.16.0
+RUN mkdir -p /usr/hurs/src
+WORKDIR /usr/hurs/src
+COPY package.json /usr/hurs/src
 RUN npm install
-COPY . /usr/hurs
-CMD ["node", "index.js"]
+COPY . /usr/hurs/src
+CMD ["node", "src/index.js"]
