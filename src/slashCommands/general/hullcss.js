@@ -18,10 +18,7 @@ module.exports = {
 			.setDescription(
 				'HullCSS set up with the aim of providing engaging events for students with an interest in Computer Science. They want to make life outside of your course as fun and interesting as possible, organising both social and technical events for you.'
 			)
-			.addField(
-				'You can join them from below!',
-				'https://hullcss.org/discord'
-			);
+			.addField('You can join them from below!', 'https://hullcss.org/discord');
 		interaction.reply({ embeds: [embed] });
 	},
 };
