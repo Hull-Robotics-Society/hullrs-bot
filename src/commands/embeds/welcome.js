@@ -19,7 +19,7 @@ module.exports = {
             .addField('Exec Members', `President - <@720360699053998242>.\r\nVice President - <@219827174180388864>.\r\nTreasurer - <@619168812083838979>.\r\nSecretary - <@660971490111651840>\r\nMedia Officer - <@626884131812540416>.\r\n Health and Safety Officer - <@311175662817902594>.\r\Project Manager - <@256765136365289482>.\r\n\r\n\r\n`)
             .addField('Rules', ' https://github.com/UniOfHullRoboticsSociety/conduct')
             .addField('Our Links', ` https://www.linktr.ee/HU_RS`)
-            .addField('Roles','Please message <@219827174180388864> to recieve the <@&744923016751743038> role.\r\nSelect your year below.')
+            .addField('Roles','Please message <@219827174180388864> to receive the <@&744923016751743038> role.\r\nSelect your year below.')
 
             const years = new discord.MessageActionRow()
 			.addComponents(

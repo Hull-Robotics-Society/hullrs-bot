@@ -21,7 +21,7 @@ module.exports = {
         const row = new MessageActionRow()
         .addComponents(
             new MessageButton()
-            .setCustomId('currentprojects')
+            .setCustomId('currentProjects')
             .setLabel('See Current Projects')
             .setStyle('PRIMARY')
         )

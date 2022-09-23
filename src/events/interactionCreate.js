@@ -1,4 +1,3 @@
-
 const client = require("../index");
 const discord = require('discord.js')
 
@@ -8,7 +7,7 @@ client.on("interactionCreate", async (interaction) => {
 
         const cmd = client.slashCommands.get(interaction.commandName);
         if (!cmd)
-            return interaction.followUp({ content: "An error has occured " });
+            return interaction.followUp({ content: "An error has occurred " });
 
         const args = [];
 
@@ -166,31 +165,31 @@ client.on("interactionCreate", async (interaction) => {
         if(interaction.customId == "projectSuggest")
         {
             const modal = new discord.Modal()
-                .setCustomId('modal-projectrequest')
-                .setTitle('Poject Request')
-            const projectname = new discord.TextInputComponent()                        
+                .setCustomId('modal-projectRequest')
+                .setTitle('Project Request')
+            const projectName = new discord.TextInputComponent()                        
                 .setLabel("Project Name")
                 .setStyle("SHORT")
-                .setCustomId("projectname")
+                .setCustomId("projectName")
                 .setPlaceholder(`A big robot`)
-            const projectdescription = new discord.TextInputComponent()                        
+            const projectDescription = new discord.TextInputComponent()                        
                 .setLabel("Project Description")
                 .setStyle("PARAGRAPH")
-                .setCustomId("projectdescription")
+                .setCustomId("projectDescription")
                 .setPlaceholder(`Its a super cool project`)
-            const projectreason = new discord.TextInputComponent()                        
+            const projectReason = new discord.TextInputComponent()                        
                 .setLabel("How would students benefit from this project?")
                 .setStyle("PARAGRAPH")
-                .setCustomId("projectreason")
+                .setCustomId("projectReason")
                 .setPlaceholder(`Its a super cool project`)
-            const projectotherinfo = new discord.TextInputComponent()                        
+            const projectOtherInfo = new discord.TextInputComponent()                        
                 .setLabel("Other information you would like to share")
                 .setStyle("PARAGRAPH")
-                .setCustomId("projectotherinfo")
-            const firstActionRow = new discord.MessageActionRow().addComponents(projectname);
-            const secondActionRow = new discord.MessageActionRow().addComponents(projectdescription);   
-            const thirdActionRow = new discord.MessageActionRow().addComponents(projectreason);   
-            const fourthActionRow = new discord.MessageActionRow().addComponents(projectotherinfo);   
+                .setCustomId("projectOtherInfo")
+            const firstActionRow = new discord.MessageActionRow().addComponents(projectName);
+            const secondActionRow = new discord.MessageActionRow().addComponents(projectDescription);   
+            const thirdActionRow = new discord.MessageActionRow().addComponents(projectReason);   
+            const fourthActionRow = new discord.MessageActionRow().addComponents(projectOtherInfo);   
             modal.addComponents(firstActionRow, secondActionRow, thirdActionRow, fourthActionRow);
             await interaction.showModal(modal);   
         }
@@ -211,7 +210,7 @@ client.on("interactionCreate", async (interaction) => {
                     .setLabel("Student Name")
                     .setStyle("SHORT")
                     .setCustomId("studentname")
-                    .setPlaceholder(`Joe Bloggs`)
+                    .setPlaceholder(`Joe Blogs`)
                 const studentnumber = new discord.TextInputComponent()                        
                     .setLabel("Student Number")
                     .setStyle("SHORT")
@@ -224,7 +223,7 @@ client.on("interactionCreate", async (interaction) => {
                 }
         }
 
-        if(interaction.customId == "deletemessage")
+        if(interaction.customId == "deleteMessage")
         {
             await interaction.message.delete();
             await interaction.reply({ content: 'Message has been deleted', ephemeral: true});
@@ -240,16 +239,16 @@ client.on("interactionCreate", async (interaction) => {
 
     if(interaction.isModalSubmit())
     {
-        if(interaction.customId === 'modal-projectrequest')
+        if(interaction.customId === 'modal-projectRequest')
         {
             const botOutput = client.channels.cache.get('1016687156728709130')
             const embed = new discord.MessageEmbed()
                 .setTitle("New Project Request")
                 .setColor('PURPLE')
-                .addField('Project ', `${ interaction.fields.getTextInputValue("projectname")}`)
-                .addField('Project Description',`${ interaction.fields.getTextInputValue("projectdescription")}`)
-                .addField('Project Reasoning',`${ interaction.fields.getTextInputValue("projectreason")}`)
-                .addField('Any Other Info',`${ interaction.fields.getTextInputValue("projectotherinfo")}`)
+                .addField('Project ', `${ interaction.fields.getTextInputValue("projectName")}`)
+                .addField('Project Description',`${ interaction.fields.getTextInputValue("projectDescription")}`)
+                .addField('Project Reasoning',`${ interaction.fields.getTextInputValue("projectReason")}`)
+                .addField('Any Other Info',`${ interaction.fields.getTextInputValue("projectOtherInfo")}`)
                 .setFooter({ text: `Requested by ${interaction.user.tag}`})
             botOutput.send({embeds: [embed] });
             await interaction.deferReply({ ephemeral: true })
@@ -269,7 +268,7 @@ client.on("interactionCreate", async (interaction) => {
             const row = new discord.MessageActionRow()
             .addComponents(
                 new discord.MessageButton()
-                    .setCustomId('deletemessage')
+                    .setCustomId('deleteMessage')
                     .setEmoji('')
                     .setLabel('Delete Message')
                     .setStyle('DANGER')
