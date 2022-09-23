@@ -6,7 +6,6 @@
     "scripts": {
         "spell": "cspell /**/",
         "spell-code": "cspell src/**/"
-
     },
     "keywords": [],
     "author": "",
@@ -17,6 +16,11 @@
         "glob": "^7.2.3"
     },
     "devDependencies": {
-        "cspell": "^6.10.1"
+        "cspell": "^6.10.1",
+        "eslint": "^8.23.1",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "prettier": "^2.7.1"
     }
 }
