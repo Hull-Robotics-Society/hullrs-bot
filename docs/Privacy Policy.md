@@ -8,4 +8,4 @@ Usage Data: May include information such as your browser type, browser version, 
 
 ## Contact Us
 
-If you have any questions about our Privacy Policy, You can contact us via our [Official Discord Server](https://discord.gg/U2VRugRh).
+If you have any questions about our Privacy Policy, You can contact us via our [Official Discord Server](https://discord.gg/S5GdNre8WP).
