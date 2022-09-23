@@ -1,4 +1,4 @@
-const discord = require('discord.js');
+const { MessageEmbed, MessageActionRow, MessageButton } = require('discord.js');
 
 module.exports = {
 	name: 'pronouns',
@@ -11,40 +11,40 @@ module.exports = {
 	 */
 
 	run: async (client, message) => {
-		const pronounsEmbed = new discord.MessageEmbed()
+		const pronounsEmbed = new MessageEmbed()
 			.setColor('#31429a')
 			.setFooter(`Called By: ${message.author.tag}`)
 			.setTimestamp()
 			.setTitle('Pronoun Roles!')
 			.setDescription(`Select your pronouns from below!`);
 
-		const pronouns = new discord.MessageActionRow()
+		const pronouns = new MessageActionRow()
 			.addComponents(
-				new discord.MessageButton()
+				new MessageButton()
 					.setCustomId('HeHim')
 					.setLabel('He / Him')
 					.setStyle('PRIMARY')
 			)
 			.addComponents(
-				new discord.MessageButton()
+				new MessageButton()
 					.setCustomId('SheHer')
 					.setLabel('She / Her')
 					.setStyle('PRIMARY')
 			)
 			.addComponents(
-				new discord.MessageButton()
+				new MessageButton()
 					.setCustomId('TheyThem')
 					.setLabel('They / Them')
 					.setStyle('PRIMARY')
 			)
 			.addComponents(
-				new discord.MessageButton()
+				new MessageButton()
 					.setCustomId('Ask')
 					.setLabel('Ask My Pronouns')
 					.setStyle('PRIMARY')
 			)
 			.addComponents(
-				new discord.MessageButton()
+				new MessageButton()
 					.setCustomId('Any')
 					.setLabel('Any Pronouns')
 					.setStyle('PRIMARY')

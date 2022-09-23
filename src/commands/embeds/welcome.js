@@ -1,4 +1,4 @@
-const discord = require('discord.js');
+const { MessageEmbed, MessageActionRow, MessageButton } = require('discord.js');
 
 module.exports = {
 	name: 'welcome',
@@ -10,7 +10,7 @@ module.exports = {
 	 * @param {String[]} args
 	 */
 	run: async (client, message) => {
-		const welcome = new discord.MessageEmbed()
+		const welcome = new MessageEmbed()
 			.setColor('#31429a')
 			.setFooter(`Called By: ${message.author.tag}`)
 			.setTimestamp()
@@ -29,48 +29,48 @@ module.exports = {
 				'Please message <@219827174180388864> to receive the <@&744923016751743038> role.\r\nSelect your year below.'
 			);
 
-		const years = new discord.MessageActionRow()
+		const years = new MessageActionRow()
 			.addComponents(
-				new discord.MessageButton()
+				new MessageButton()
 					.setCustomId('Foundation')
 					.setLabel('Foundation')
 					.setStyle('PRIMARY')
 			)
 			.addComponents(
-				new discord.MessageButton()
+				new MessageButton()
 					.setCustomId('Freshers')
 					.setLabel('Freshers')
 					.setStyle('PRIMARY')
 			)
 			.addComponents(
-				new discord.MessageButton()
+				new MessageButton()
 					.setCustomId('SecondYear')
 					.setLabel('Second Year')
 					.setStyle('PRIMARY')
 			)
 			.addComponents(
-				new discord.MessageButton()
+				new MessageButton()
 					.setCustomId('Bachelors')
 					.setLabel('Bachelors')
 					.setStyle('PRIMARY')
 			)
 			.addComponents(
-				new discord.MessageButton()
+				new MessageButton()
 					.setCustomId('Masters')
 					.setLabel('Masters')
 					.setStyle('PRIMARY')
 			);
 
-		const yearsCont = new discord.MessageActionRow()
+		const yearsCont = new MessageActionRow()
 			.addComponents(
-				new discord.MessageButton()
+				new MessageButton()
 					.setCustomId('PhD')
 					.setLabel('PhD')
 					.setStyle('PRIMARY')
 			)
 
 			.addComponents(
-				new discord.MessageButton()
+				new MessageButton()
 					.setCustomId('Graduate')
 					.setLabel('Graduate')
 					.setStyle('PRIMARY')
