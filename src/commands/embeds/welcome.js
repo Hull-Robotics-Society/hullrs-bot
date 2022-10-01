@@ -26,7 +26,7 @@ module.exports = {
 			.addField('Our Links', ` https://www.linktr.ee/HU_RS`)
 			.addField(
 				'Roles',
-				'Please message <@219827174180388864> to receive the <@&744923016751743038> role.\r\nSelect your year below.'
+				'Head to <#1016760963850043402> to request the paid member role!\r\nSelect your year and pronouns below.'
 			);
 
 		const years = new MessageActionRow()
