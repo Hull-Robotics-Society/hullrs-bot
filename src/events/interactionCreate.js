@@ -132,7 +132,6 @@ client.on('interactionCreate', async (interaction) => {
 					ephemeral: true,
 				});
 			}
-
 		}
 
 		if (interaction.customId == 'TheyThem') {
