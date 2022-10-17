@@ -1,4 +1,4 @@
-FROM node:18.10.0
+FROM node:18.11.0
 RUN mkdir -p /usr/hurs/src
 WORKDIR /usr/hurs/src
 COPY package.json /usr/hurs/src
