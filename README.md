@@ -59,3 +59,7 @@ Using a tool like [Ouroboros](https://github.com/gmt2001/ouroboros), you can aut
 While this bot is maintained by [Kieran](https://github.com/KieranRobson), contributors are welcome!
 
 - Contribution guidelines are coming soon.
+
+## License
+
+hullrs-discord-bot is licensed under the MIT License. The full license text is included in the [LICENSE](LICENSE) file in this repository. Tldr legal have a [great summary](https://www.tldrlegal.com/l/mit) of the license if you're interested.
