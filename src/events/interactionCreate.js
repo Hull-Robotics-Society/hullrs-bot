@@ -274,6 +274,30 @@ client.on('interactionCreate', async (interaction) => {
 			}
 		}
 
+		if (interaction.customId == 'feedbackButton') {
+				const modal = new discord.Modal()
+					.setCustomId('modal-feedback')
+					.setTitle('Anonymous Feedback');
+				const positive = new discord.TextInputComponent()
+					.setLabel('Positive')
+					.setStyle('PARAGRAPH')
+					.setCustomId('Positive')
+					.setPlaceholder(`I really like this society`);
+				const negative = new discord.TextInputComponent()
+					.setLabel('Improvements')
+					.setStyle('PARAGRAPH')
+					.setCustomId('Improvements')
+					.setPlaceholder(`This could be improved`);
+				const firstActionRow = new discord.MessageActionRow().addComponents(
+					positive
+				);
+				const secondActionRow = new discord.MessageActionRow().addComponents(
+					negative
+				);
+				modal.addComponents(firstActionRow, secondActionRow);
+				await interaction.showModal(modal);
+		}
+
 		if (interaction.customId == 'deleteMessage') {
 			await interaction.message.delete();
 			await interaction.reply({
@@ -341,6 +365,27 @@ client.on('interactionCreate', async (interaction) => {
 			await interaction.deferReply({ ephemeral: true });
 			interaction.followUp({
 				content: 'Your request has been sent to execs!',
+				ephemeral: true,
+			});
+		}
+
+		if (interaction.customId === 'modal-feedback') {
+			const botOutput = client.channels.cache.get('1011712930200424518');
+			const embed = new discord.MessageEmbed()
+				.setTitle('New Feedback')
+				.setColor('YELLOW')
+				.addField(
+					'Positive Feedback ',
+					`${interaction.fields.getTextInputValue('Positive')}`
+				)
+				.addField(
+					'Improvements that could be made',
+					`${interaction.fields.getTextInputValue('Improvements')}`
+				)
+			botOutput.send({ embeds: [embed] });
+			await interaction.deferReply({ ephemeral: true });
+			interaction.followUp({
+				content: 'Your feedback has been sent to execs! They cannot see who sent it!',
 				ephemeral: true,
 			});
 		}
