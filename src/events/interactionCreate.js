@@ -370,7 +370,7 @@ client.on('interactionCreate', async (interaction) => {
 		}
 
 		if (interaction.customId === 'modal-feedback') {
-			const botOutput = client.channels.cache.get('1011712930200424518');
+			const botOutput = client.channels.cache.get('1045995322658271294');
 			const embed = new discord.MessageEmbed()
 				.setTitle('New Feedback')
 				.setColor('YELLOW')
