@@ -4,7 +4,6 @@
 	"description": "",
 	"main": "src/index.js",
 	"scripts": {
-		"dev": "nodemon -L src/index.js",
 		"spell": "cspell /**/",
 		"spell:code": "cspell src/**/",
 		"lint": "npx eslint src",
@@ -26,6 +25,7 @@
 		"glob": "^7.2.3"
 	},
 	"devDependencies": {
+		"alex": "11.0.0",
 		"cspell": "^6.16.0",
 		"eslint": "^8.29.0",
 		"eslint-config-prettier": "^8.5.0",
