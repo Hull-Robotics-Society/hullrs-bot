@@ -32,15 +32,14 @@ module.exports = {
 			.setTitle('Anonymous Feedback!')
 			.setDescription(
 				`Press the button below to get access to leave feedback!`
-			)
-
-		const row = new MessageActionRow()
-			.addComponents(
-				new MessageButton()
-					.setCustomId('feedbackButton')
-					.setLabel('Feedback Form')
-					.setStyle('PRIMARY')
 			);
+
+		const row = new MessageActionRow().addComponents(
+			new MessageButton()
+				.setCustomId('feedbackButton')
+				.setLabel('Feedback Form')
+				.setStyle('PRIMARY')
+		);
 		message.channel.send({ embeds: [embed], components: [row] });
 	},
 };

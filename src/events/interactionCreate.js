@@ -275,27 +275,27 @@ client.on('interactionCreate', async (interaction) => {
 		}
 
 		if (interaction.customId == 'feedbackButton') {
-				const modal = new discord.Modal()
-					.setCustomId('modal-feedback')
-					.setTitle('Anonymous Feedback');
-				const positive = new discord.TextInputComponent()
-					.setLabel('Positive')
-					.setStyle('PARAGRAPH')
-					.setCustomId('Positive')
-					.setPlaceholder(`I really like this society`);
-				const negative = new discord.TextInputComponent()
-					.setLabel('Improvements')
-					.setStyle('PARAGRAPH')
-					.setCustomId('Improvements')
-					.setPlaceholder(`This could be improved`);
-				const firstActionRow = new discord.MessageActionRow().addComponents(
-					positive
-				);
-				const secondActionRow = new discord.MessageActionRow().addComponents(
-					negative
-				);
-				modal.addComponents(firstActionRow, secondActionRow);
-				await interaction.showModal(modal);
+			const modal = new discord.Modal()
+				.setCustomId('modal-feedback')
+				.setTitle('Anonymous Feedback');
+			const positive = new discord.TextInputComponent()
+				.setLabel('Positive')
+				.setStyle('PARAGRAPH')
+				.setCustomId('Positive')
+				.setPlaceholder(`I really like this society`);
+			const negative = new discord.TextInputComponent()
+				.setLabel('Improvements')
+				.setStyle('PARAGRAPH')
+				.setCustomId('Improvements')
+				.setPlaceholder(`This could be improved`);
+			const firstActionRow = new discord.MessageActionRow().addComponents(
+				positive
+			);
+			const secondActionRow = new discord.MessageActionRow().addComponents(
+				negative
+			);
+			modal.addComponents(firstActionRow, secondActionRow);
+			await interaction.showModal(modal);
 		}
 
 		if (interaction.customId == 'deleteMessage') {
@@ -381,11 +381,12 @@ client.on('interactionCreate', async (interaction) => {
 				.addField(
 					'Improvements that could be made',
 					`${interaction.fields.getTextInputValue('Improvements')}`
-				)
+				);
 			botOutput.send({ embeds: [embed] });
 			await interaction.deferReply({ ephemeral: true });
 			interaction.followUp({
-				content: 'Your feedback has been sent to execs! They cannot see who sent it!',
+				content:
+					'Your feedback has been sent to execs! They cannot see who sent it!',
 				ephemeral: true,
 			});
 		}
