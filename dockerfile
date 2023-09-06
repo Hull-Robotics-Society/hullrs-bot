@@ -1,4 +1,4 @@
-FROM node:20.5.1
+FROM node:20.6.0
 RUN mkdir -p /usr/hurs/src
 WORKDIR /usr/hurs/src
 COPY package.json /usr/hurs/src
